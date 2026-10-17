@@ -1,3 +1,7 @@
+/* This is library Header for module MAX7219 (led matrix and 7-digit led) */
+/* Author: Trần Lê Nhật Đoan */
+/*------------------------------------------*/
+
 # --- Cấu hình trình biên dịch ---
 CC = gcc
 CFLAGS = -Wall -std=c99 -I.

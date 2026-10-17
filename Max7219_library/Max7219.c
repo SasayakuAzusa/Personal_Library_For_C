@@ -1,4 +1,4 @@
-/* This is library Header for module MAX7219 (led matrix) */
+/* This is library Header for module MAX7219 (led matrix and 7-digit led) */
 /* Author: Trần Lê Nhật Đoan */
 /*------------------------------------------*/
 

@@ -1,8 +1,9 @@
-/* This is library Header for module MAX7219 (led matrix and 7-digit led) */
+/* This is Library for module MAX7219 (led matrix and 7-digit led) */
 /* Author: Trần Lê Nhật Đoan */
 /*------------------------------------------*/
 
 #include "Max7219.h"
+#include <wiringPiSPI.h>
 
 /* Checking pointer valid */
 #define CHECK_POINTER_INT(ptr) if ((ptr) == NULL) {return -1;}  // Checking for int function

@@ -119,21 +119,23 @@ typedef struct {
     DS3231_Alarm2ModeTypeDef mode;      // Alarm 2 matching condition
 } DS3231_Alarm2TypeDef;
 
-/** @brief DS3231 Main Obfect Handle */
+/** @brief DS3231 Main Object Handle */
 typedef struct {
-    uint8_t deviceAddress;              /*!< I2C address of the DS3231 */
-    int     i2cFd;                      /*!< OS-assigned I2C file descriptor */
+    uint8_t deviceAddress;              // I2C address of the DS3231
+    int     i2cFd;                      // OS-assigned I2C file descriptor
 } DS3231_HandleTypeDef;
 
 /* Function Prototypes */
-    /* Initialzation & Status API */
+    /* Initialization & Status API */
 int  DS3231_Init(DS3231_HandleTypeDef *hds);
 bool DS3231_CheckLostPower(DS3231_HandleTypeDef *hds);
 
     /* RTC Core API */
-void  DS3231_SetTime(DS3231_HandleTypeDef *hds, const DS3231_TimeTypeDef *sTime);
-void  DS3231_GetTime(DS3231_HandleTypeDef *hds, DS3231_TimeTypeDef *sTime);
-float DS3231_GetTemperature(DS3231_HandleTypeDef *hds);
+bool   DS3231_SetTime(DS3231_HandleTypeDef *hds, const DS3231_TimeTypeDef *sTime);
+bool   DS3231_GetTime(DS3231_HandleTypeDef *hds, DS3231_TimeTypeDef *sTime);
+float  DS3231_GetTemperature(DS3231_HandleTypeDef *hds);
+void   DS3231_SetAgingOffset(DS3231_HandleTypeDef *hds, int8_t offset);
+int8_t DS3231_GetAgingOffset(DS3231_HandleTypeDef *hds);
 
     /* Alarm & Interrupt API */
 void DS3231_SetAlarm1(DS3231_HandleTypeDef *hds, const DS3231_Alarm1TypeDef *sAlarm);
